@@ -1,30 +1,32 @@
 <template>
   <div>
-    <h1>{{ titre }}</h1>
+    <LesArticles msg="Liste des articles"/>
+    <!-- <h3>{{ titre }}</h3>
     <div v-for="unArticle in listeArticles" v-bind:key="unArticle">
       {{ unArticle }}
-    </div>
+    </div> -->
+    <!-- <h3>{{titreJson}}</h3>
+    <button v-on:click="getMyJson()">Go !</button>
+    <p>{{tommy}}</p>
+    <h3>Récupération json avec axios</h3>
     <div v-for="devise in info" v-bind:key="devise.id">
       <span>{{devise.rate_float.toFixed(2)}}</span>
       <span v-html="devise.symbol"></span>
-    </div>
-    <button v-on:click="getMyJson()">Go !</button>
-    <p>{{tommy}}</p>
-    <button v-on:click="getMyArticles()">Articles</button>
-    <ul>
-      <li v-for="art2 in articles" v-bind:key="art2.id">
-        {{art2.description}}
-      </li>
-    </ul>
+    </div> -->
+    <a class="lien" href="#">Ajouter un article</a>
   </div>
 </template>
 
 <script>
+
+import LesArticles from '@/components/LesArticles.vue'
+
 export default {
   data: function() {
     return {
-      titre: "Articles",
+      titre: "Récupération d'un tableau d'articles",
       listeArticles: ['produit1', 'produit2', 'produit3'],
+      titreJson: "Récupération d'un fichier json",
       info: {},
       tommy: {},
       articles: {}
@@ -40,17 +42,10 @@ export default {
       this.http.get('http://localhost:9000/tommy').then(response => {
         this.tommy = response.data
       })
-    },
-    getMyArticles: function() {
-      console.log("Articles");
-      this.http.get('http://localhost:8082/datajson').then(response => {
-        console.log(response.data.articles);
-        this.articles = response.data.articles
-      })
-      .catch(error => {
-        console.log(error)
-      })
     }
+  },
+  components: {
+    LesArticles
   }
 }
 </script>
@@ -58,5 +53,14 @@ export default {
 <style scoped>
 h1 {
   color: red;
+}
+
+.lien {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  text-decoration: none;
+  color: #000;
 }
 </style>
