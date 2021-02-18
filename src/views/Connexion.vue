@@ -28,7 +28,6 @@ export default {
                 this.name = response.data.name;
                 this.nameUser = true;
                 console.log(response);
-                console.log(req.session.name);
             })
         }
     }

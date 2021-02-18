@@ -7,7 +7,8 @@
       <router-link to="/ajoutArticle">Ajouter Article</router-link> |
       <router-link to="/crypt">Inscription</router-link> |
       <router-link to="/connexion">Connexion</router-link> |
-      <router-link to="/test">Test</router-link>
+      <router-link to="/test">Test</router-link> |
+      <router-link to="/animaux">Animaux</router-link>
     </div>
     <router-view/>
   </div>

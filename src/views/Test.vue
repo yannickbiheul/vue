@@ -18,7 +18,7 @@ export default {
         sessions: function() {
             this.$session.start();
             this.$session.set('name', 'Litamesbourg')
-            console.log(this.$session.getAll())
+            console.log(this.$session)
         },
         quelName: function() {
             this.named = this.$session.get('name')

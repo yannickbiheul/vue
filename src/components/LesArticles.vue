@@ -2,7 +2,7 @@
   <div class="lesArticles">
     <h1>{{ msg }}</h1>
     <!-- <button v-on:click="getMyArticles()">Articles</button> -->
-    {{getMyArticles()}}
+    <!-- {{getMyArticles()}} -->
     <div v-for="art2 in articles" v-bind:key="art2.id">
         <a href="#">{{art2.description}}</a>
     </div>

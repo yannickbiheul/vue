@@ -6,6 +6,7 @@ import AjoutArticle from '../views/AjoutArticle.vue'
 import Crypt from '../views/Crypt.vue'
 import Connexion from '../views/Connexion.vue'
 import Test from '../views/Test.vue'
+import Animaux from '../views/Animaux.vue'
 
 Vue.use(VueRouter)
 
@@ -47,6 +48,11 @@ const routes = [
     path: '/test',
     name: 'Test',
     component: Test
+  },
+  {
+    path: '/animaux',
+    name: 'Animaux',
+    component: Animaux
   }
 
 ]
